@@ -125,29 +125,85 @@ console.log('Mexican Foods: ', mexicanFood)
 
 //1. Create a function that will return all dishes with the cuisine type of "vegetarian"
 //Filter
+function veggieMeals(){
 
-function problemOne(){
-
-    let results;
-
+let results = dishes.filter(function(element){
+    if(element.cuisine === "Vegetarian"){
+        return true;
+    }
+    else{
+        return false;
+    }
+    })
 
     return results;
 }
+let vegetarianOptions = veggieMeals();
+console.log('Vegetarian Foods' , vegetarianOptions)
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function bigItalianMeal(){
+
+let results = dishes.filter(function(element){
+    return (element.cuisine === 'Italian') && (element.servings > 5)
+})
+      return results;
+
+}
+let bigItalianOption = bigItalianMeal();
+console.log('Italian Family Meals',bigItalianOption)
+
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
+function equality(){
+
+    let results = dishes.filter(function(element){
+        return(element.id === element.servings)
+    })
+    return results;
+}
+let equalityServing = equality();
+console.log('ID matches servings count',equalityServing)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function even(){
+    let results =dishes.filter(function(element){
+        return(element.id %2===0);        
+})
+        return results;
+}
+let evenNumbers = even();
+console.log('Even Numbers', evenNumbers)
+    
+
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
+function tomAndCheese(){
+    let results = dishes.filter(function(element){
+        return(element.ingredients = 'tomato', 'cheese');
+})
+        return results
+}
+    
+let tomatoAndCheese = tomAndCheese();
+console.log("Dishes with tomato and cheese", tomatoAndCheese)
+
+
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
+// function Ethnicity(){
+//     let results = cuisine.map(function(element){
+//         return(element)
+
+//     })}
+// console.log(Ethnicity("Ethnicity", cuisine))
+
+
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
@@ -167,4 +223,3 @@ function problemOne(){
 //Must use Reduce, not a loop.
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
-
